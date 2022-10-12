@@ -4,21 +4,21 @@
 
 As a user i would like to have the best selection of meal with cocktail. So i can have the best dining at home experience.
 
-GIVEN: I am choosing what i want to eat and drink for any meal
-WHEN: I search a recipe in the "recipe" box
-THEN: a list of potential recipes will appear below it
-WHEN: I search a drink in the "cocktail" box
-THEN: a list of potential cocktail drinks will appear below it
-WHEN: I select a recipe a pop up will show a preview
-THEN: i will select or close
-WHEN: I select a cocktail a pop up will show a preview
-THEN: i will select or close
-WHEN: I have selected both recipes
-THEN: they will appear on the screen to accept or reject
-WHEN: Accepted
-THEN: they will save to local storage history and a 2nd page will open to fully display the recipes that were chosen
-WHEN: I click the heart at the top of the page
-THEN: i see a history of what i have made in the past and if it was a good match or not
+- GIVEN: I am choosing what i want to eat and drink for any meal
+- WHEN: I search a recipe in the "recipe" box
+- THEN: a list of potential recipes will appear below it
+- WHEN: I search a drink in the "cocktail" box
+- THEN: a list of potential cocktail drinks will appear below it
+- WHEN: I select a recipe a pop up will show a preview
+- THEN: i will select or close
+- WHEN: I select a cocktail a pop up will show a preview
+- THEN: i will select or close
+- WHEN: I have selected both recipes
+- THEN: they will appear on the screen to accept or reject
+- WHEN: Accepted
+- THEN: they will save to local storage history and a 2nd page will open to fully display the recipes that were chosen
+- WHEN: I click the heart at the top of the page
+- THEN: i see a history of what i have made in the past and if it was a good match or not
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 

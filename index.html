@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Match</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://github.com/ricky-rosay/p01-meal-match">
-            <h1 class="title is-1"><strong>Meal Match</strong></h1>
+            <h1 class="test1"><strong>Meal Match</strong></h1>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -55,27 +56,33 @@
         </div>
       </section>
     <!--making this entire section a box-->
-    <section class="hero is-large is-halfheight">
-        <div class="box" id="recipe">
-            <h1>search food</h1>
-            <button class="button is-info">Button</button>
-            <input type="text" placeholder="Food?">
-            <div>
-                <h2>results will be here</h2>
-            </div>
-        </div>
-    </section>
     <!--making this entire section a box-->
-    <section class="hero is-large is-halfheight">
-        <div class="box" id="drink">
-            <h1>Search Beverage</h1>
-            <input type="text" placeholder="Cocktail?">
-            <div>
-                <h2>results will be here</h2>
+    <div class="columns">
+        <div class="column is-half">
+            <section class="hero is-large is-halfheight">
+                <div class="box" id="recipe">
+                    <h1>Search Recipe</h1>
+                    <input type="text" placeholder="Recipe?">
+                    <div>
+                        <h2>results will be here</h2>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <div class="column">
+                <section class="hero is-large is-halfheight">
+                    <div class="box" id="drink">
+                        <h1>Search Beverage</h1>
+                        <input type="text" placeholder="Cocktail?">
+                        <div>
+                            <h2>results will be here</h2>
+                        </div>
+                    </div>
+                    </div>
+                </section>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
     <div class="box">
         <h1>The 2 chosen results</h1>
     </div>

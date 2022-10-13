@@ -1,2 +1,18 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+body {
+    background-color: purple;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+#example {
+    font-size: 200px;
+}
+
+.test1 {
+    color: purple;
+    font-size: 50px;
+}

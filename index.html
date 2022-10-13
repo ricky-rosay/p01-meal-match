@@ -9,17 +9,49 @@
 </head>
 
 <body>
-    <header>
-        <nav>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://github.com/ricky-rosay/p01-meal-match">
             <h1 class="title is-1"><strong>Meal Match</strong></h1>
-            <div class="nav-center">
-                <a href="">Most Loved</a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="#recipe">Choose a recipe</a>
+      
+            <a class="navbar-item" href="#drink">Choose a cocktail</a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">More</a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">About Us</a>
+              </div>
             </div>
-        </nav>
-    </header>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-light">I Love It!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <header>
     <section class="hero is-large is-info">
         <div class="hero-body">
-            <img src="./Assets/images/dinner.jpg" alt="">
+            <p class="columns"><strong>(this is where we will have an intro to the website, as well as a small description!)</strong></p>
+            <figure>
+                <img class="is-rounded" src="./Assets/images/dinner.jpg" alt="">
+            </figure>
         </div>
       </section>
     <!--making this entire section a box-->

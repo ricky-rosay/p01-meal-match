@@ -47,12 +47,9 @@
         </div>
       </nav>
     <header>
-    <section class="hero is-large is-info">
+    <section class="hero is-large">
         <div class="hero-body">
             <p class="columns"><strong>(this is where we will have an intro to the website, as well as a small description!)</strong></p>
-            <figure>
-                <img class="is-rounded" src="./Assets/images/dinner.jpg" alt="">
-            </figure>
         </div>
       </section>
     <!--making this entire section a box-->
@@ -63,6 +60,7 @@
                 <div class="box" id="recipe">
                     <h1>Search Recipe</h1>
                     <input id="foodInput" type="text" placeholder="Recipe?">
+                    <button id="foodBtn">Submit</button>
                     <div>
                         <h2>results will be here</h2>
                     </div>
@@ -74,6 +72,8 @@
                     <div class="box" id="drink">
                         <h1>Search Beverage</h1>
                         <input id="drinkInput" type="text" placeholder="Cocktail?">
+                        <button id="drinkBtn">Submit</button>
+                        <button id="randomBtn">Random</button>
                         <div>
                             <h2>results will be here</h2>
                         </div>
@@ -86,6 +86,9 @@
     <div class="box">
         <h1>The 2 chosen results</h1>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="./Assets/js/script.js"></script>
 </body>
 
 </html>

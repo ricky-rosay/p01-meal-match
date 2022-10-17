@@ -4,32 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js">
+    <link rel="stylesheet" href="./Assets/css/results.css">
     <title>Meal Match Results</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Meal Match Results</h1>
-        </nav>
-        <div>
-            <h1>Recipe</h1>
-            <div>
-                <h2>the recipe ingridents</h2>
+<!--<<<<<<<<<<<<<<< main body of results page Begin >>>>>>>>>>>-->
+    <main>
+        <!--<<<<<<<<<<<<<<< cards             Begin >>>>>>>>>>>-->
+        <section id="card-section" class="section">
+            <div id="card-container" class="container">
+                <h3 id="card-container-hdg" class="title has-text-centered is-size-3">Your Meal is Matched</h3>
+                <div class="columns mt-5 is-10">
+                    <div class="column is-6">
+                        <div id="recipe-card" class="card">
+                            <div id="recipe-img" class="card-image has-text-centered px-1">
+                                <img src="./Assets/images/dinner.jpg" alt="just a test imgage">
+                            </div>
+                            <header class="card-header">
+                                <p id="recipe-name" class="card-header-title">
+                                  Recipe Name
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div id="recipe-content" class="content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nostrum fuga culpa nesciunt voluptas, possimus quas. Laborum neque quis repudiandae quia reprehenderit sapiente mollitia consectetur officia itaque delectus. Voluptate magni dolore at, nobis iusto similique doloribus hic numquam quia aliquid facilis animi ullam facere ipsum cumque quis possimus veritatis provident?
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Save</a>
+                                <a href="#" class="card-footer-item">Go Back</a>
+                            </footer>
+                        </div>
+                    </div>
+
+                    <div class="is-divider-vertical" data-content="MMMMMatch"></div>
+                 
+                    <div class="column is-6">    
+                        <div id="drink-card" class="card">
+                            <div id="drnk-img" class="card-image has-text-centered px-1">
+                                <img src="./Assets/images/dinner.jpg" alt="just a test imgage">
+
+                            </div>
+                            <header class="card-header">
+                                <p id="drink-name" class="card-header-title">
+                                  Drink Name
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div id="drink-content" class="content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nostrum fuga culpa nesciunt voluptas, possimus quas. Laborum neque quis repudiandae quia reprehenderit sapiente mollitia consectetur officia itaque delectus. Voluptate magni dolore at, nobis iusto similique doloribus hic numquam quia aliquid facilis animi ullam facere ipsum cumque quis possimus veritatis provident?
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Save</a>
+                                <a href="#" class="card-footer-item">Go Back</a>
+                            </footer>
+                        </div>
+                    </div>
+
+                    
+                </div>
             </div>
-            <div>
-                <p>instructiions</p>
-            </div>
-        </div>
-        <div>
-            <h1>Cocktail</h1>
-            <div>
-                <h2>the cocktail ingridents</h2>
-            </div>
-            <div>
-                <p>instructiions</p>
-            </div>
-        </div>
-        <footer>example</footer>
-    </header>
+        </section>
+
+    </main>
+  <!--<<<<<<<<<<<<<<< main body of results page Begin >>>>>>>>>>>-->
+
+
+
+
+    <script src="./Assets/js/results.js"></script>
 </body>
 </html>

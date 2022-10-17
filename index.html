@@ -6,89 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Match</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://github.com/ricky-rosay/p01-meal-match">
-            <h1 class="test1 title is-1"><strong>Meal Match</strong></h1>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item" href="#recipe">Choose a recipe</a>
-      
-            <a class="navbar-item" href="#drink">Choose a cocktail</a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">More</a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">About Us</a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-light">I Love It!</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
     <header>
-    <section class="hero is-large">
+        <nav>
+            <h1 class="title is-1"><strong>Meal Match</strong></h1>
+            <div class="nav-center">
+                <a href="">Most Loved</a>
+            </div>
+        </nav>
+    </header>
+    <section class="hero is-large is-info">
         <div class="hero-body">
-            <p class="columns"><strong>(this is where we will have an intro to the website, as well as a small description!)</strong></p>
+            <img src="./Assets/images/dinner.jpg" alt="">
         </div>
       </section>
     <!--making this entire section a box-->
-    <!--making this entire section a box-->
-    <div class="columns">
-        <div class="column is-half">
-            <section class="hero is-large is-halfheight">
-                <div class="box" id="recipe">
-                    <h1>Search Recipe</h1>
-                    <input id="foodInput" type="text" placeholder="Recipe?">
-                    <button id="foodBtn">Submit</button>
-                    <div>
-                        <h2>results will be here</h2>
-                    </div>
-                </div>
-                </div>
-            </section>
-            <div class="column">
-                <section class="hero is-large is-halfheight">
-                    <div class="box" id="drink">
-                        <h1>Search Beverage</h1>
-                        <input id="drinkInput" type="text" placeholder="Cocktail?">
-                        <button id="drinkBtn">Submit</button>
-                        <button id="randomBtn">Random</button>
-                        <div>
-                            <h2>results will be here</h2>
-                        </div>
-                    </div>
-                    </div>
-                </section>
+    <section class="hero is-large is-halfheight">
+        <div class="box" id="recipe">
+            <h1>search food</h1>
+            <button class="button is-info">Button</button>
+            <input type="text" placeholder="Food?">
+            <div>
+                <h2>results will be here</h2>
             </div>
         </div>
-    </div>
+    </section>
+    <!--making this entire section a box-->
+    <section class="hero is-large is-halfheight">
+        <div class="box" id="drink">
+            <h1>Search Beverage</h1>
+            <input type="text" placeholder="Cocktail?">
+            <div>
+                <h2>results will be here</h2>
+            </div>
+        </div>
+        </div>
+    </section>
     <div class="box">
         <h1>The 2 chosen results</h1>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="./Assets/js/script.js"></script>
 </body>
 
 </html>

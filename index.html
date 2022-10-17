@@ -17,12 +17,70 @@
             </div>
         </nav>
     </header>
-    <section class="hero is-large is-info">
+    <!--
+    <section class="hero is-large">
         <div class="hero-body">
             <img src="./Assets/images/dinner.jpg" alt="">
         </div>
-      </section>
-    <!--making this entire section a box-->
+      </section>-->
+      <section id="card-section" class="section">
+        <div id="card-container" class="container">
+            <h3 id="card-container-hdg" class="title is-size-3">Choose your meal</h3>
+            <div class="columns mt-5 is-10">
+                <div class="column is-6">
+                    <div id="recipe-card" class="card">
+                        <div id="recipe-img" class="card-image has-text-centered px-1">
+                            <img src="./Assets/images/meal.png" alt="just a test imgage">
+                        </div>
+                        <header class="card-header">
+                            <input type="text" placeholder="Food?">
+                            <button class="button is-focused">Submit</button>
+                        </header>
+                        <div class="card-content">
+                            <div id="recipe-content" class="content">
+                                <!--the recipe list will appear here-->
+                                <ul id="recipeList">results will be here with buttons. buttons will have a modal attached to it UL will be here</ul>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item"><button class="button is-success is-light">Pick me!</button></a>
+                            <!--adding a button to go back to main page-->
+                            <a href="./index.html" class="card-footer-item"><button class="button is-danger is-light">Not for me!</button></a>
+                        </footer>
+                    </div>
+                </div>
+
+                <div class="is-divider-vertical" data-content="MMMMMatch"></div>
+             
+                <div class="column">    
+                    <div id="drink-card" class="card">
+                        <div id="drnk-img" class="card-image has-text-centered px-1">
+                            <img src="./Assets/images/cocktail.jpg" alt="just a test imgage">
+
+                        </div>
+                        <header class="card-header">
+                            <input type="text" placeholder="Cocktail?">
+                            <button class="button is-focused">Submit</button>
+                        </header>
+                        <div class="card-content">
+                            <div id="drink-content" class="content">
+                                <ul id="drinkList">results will be here with buttons. buttons will have a modal attached to it UL will be here</ul>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item"><button class="button is-success is-light">Pick me!</button></a>
+                            <!--adding a button to go back to main page-->
+                            <a href="./index.html" class="card-footer-item"><button class="button is-danger is-light">Not for me!</button></a>
+                        </footer>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+    <!--commenting this out for now-->
+    <!--making this entire section a box
     <section class="hero is-large is-halfheight">
         <div class="box" id="recipe">
             <h1>search food</h1>
@@ -33,7 +91,6 @@
             </div>
         </div>
     </section>
-    <!--making this entire section a box-->
     <section class="hero is-large is-halfheight">
         <div class="box" id="drink">
             <h1>Search Beverage</h1>
@@ -43,9 +100,22 @@
             </div>
         </div>
         </div>
-    </section>
+    </section>-->
     <div class="box">
-        <h1>The 2 chosen results</h1>
+        <div class="column is-centered">
+            <div id="recipe-card" class="card">
+                <div id="recipe-img" class="card-image has-text-centered px-1">
+                    <img src="./Assets/images/dinner.jpg" alt="just a test imgage">
+                </div>
+                <div class="card-content">
+                    <!--need to center this-->
+                    <div id="recipe-content" class="content is-centered"></div>
+                </div>
+                <footer class="card-footer">
+                    <a href="./results.html" class="card-footer-item">Show me my match!</a>
+                </footer>
+            </div>
+        </div>
     </div>
 </body>
 

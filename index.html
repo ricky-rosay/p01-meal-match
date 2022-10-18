@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Match</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 
 <body>
@@ -38,8 +39,29 @@
                         </header>
                         <div class="card-content">
                             <div id="recipe-content" class="content">
-                                <!--the recipe list will appear here-->
-                                <ul id="recipeList">results will be here with buttons. buttons will have a modal attached to it UL will be here</ul>
+                                <!--once you pull the list you can delete the li and input the data-->
+                                <ul id="recipeList">
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Example1
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Example2
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Example3
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Example4
+                                        </label>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <footer class="card-footer">
@@ -61,10 +83,33 @@
                         <header class="card-header">
                             <input type="text" placeholder="Cocktail?">
                             <button class="button is-focused">Submit</button>
+                            <button class="button is-warning is-light">Random!</button>
                         </header>
                         <div class="card-content">
                             <div id="drink-content" class="content">
-                                <ul id="drinkList">results will be here with buttons. buttons will have a modal attached to it UL will be here</ul>
+                                <!--once you pull the list you can delete the li and input the data-->
+                                <ul class="control" id="drinkList">
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Example1
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Example2
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Example3
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Example4
+                                        </label>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <footer class="card-footer">
@@ -104,12 +149,12 @@
     <div class="box">
         <div class="column is-centered">
             <div id="recipe-card" class="card">
-                <div id="recipe-img" class="card-image has-text-centered px-1">
+                <header id="recipe-img" class="card-image has-text-centered px-1">
                     <img src="./Assets/images/dinner.jpg" alt="just a test imgage">
-                </div>
+                    <p>Example1</p>
+                </header>
                 <div class="card-content">
-                    <!--need to center this-->
-                    <div id="recipe-content" class="content is-centered"></div>
+                    <div id="recipe-content" class="content is-centered">Example1</div>
                 </div>
                 <footer class="card-footer">
                     <a href="./results.html" class="card-footer-item">Show me my match!</a>

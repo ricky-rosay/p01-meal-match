@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"> -->
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./Assets/css/results.css">
     <title>Meal Match Results</title>
 </head>
@@ -20,17 +24,7 @@
                     <div class="column is-6">
                         <div id="recipe-card" class="card">
                             <div id="recipe-img" class="card-image has-text-centered px-1">
-                                <img src="./Assets/images/dinner.jpg" alt="just a test imgage">
-                            </div>
-                            <header class="card-header">
-                                <p id="recipe-name" class="card-header-title">
-                                  Recipe Name
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div id="recipe-content" class="content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nostrum fuga culpa nesciunt voluptas, possimus quas. Laborum neque quis repudiandae quia reprehenderit sapiente mollitia consectetur officia itaque delectus. Voluptate magni dolore at, nobis iusto similique doloribus hic numquam quia aliquid facilis animi ullam facere ipsum cumque quis possimus veritatis provident?
-                                </div>
+                                <img id="recipe-img1" src="./Assets/images/dinner.jpg" alt="just a test imgage">
                             </div>
                             <footer class="card-footer">
                                 <a href="#" class="card-footer-item">Save</a>
@@ -39,21 +33,22 @@
                         </div>
                     </div>
 
-                    <div class="is-divider-vertical" data-content="MMMMMatch"></div>
+                    <!-- <div class="is-divider-vertical" data-content="MMMMMatch"></div> -->
                  
                     <div class="column is-6">    
                         <div id="drink-card" class="card">
-                            <div id="drnk-img" class="card-image has-text-centered px-1">
-                                <img src="./Assets/images/dinner.jpg" alt="just a test imgage">
-
-                            </div>
                             <header class="card-header">
-                                <p id="drink-name" class="card-header-title">
+                                <p id="drinkName" class="card-header-title">
                                   Drink Name
                                 </p>
                             </header>
+                            <div id="drink-img" class="card-image has-text-centered px-1">
+                                <img id="drink-img1" src="./Assets/images/dinner.jpg" alt="just a test imgage">
+
+                            </div>
+
                             <div class="card-content">
-                                <div id="drink-content" class="content">
+                                <div id="drinkContent" class="content">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nostrum fuga culpa nesciunt voluptas, possimus quas. Laborum neque quis repudiandae quia reprehenderit sapiente mollitia consectetur officia itaque delectus. Voluptate magni dolore at, nobis iusto similique doloribus hic numquam quia aliquid facilis animi ullam facere ipsum cumque quis possimus veritatis provident?
                                 </div>
                             </div>
@@ -74,7 +69,7 @@
 
 
 
-
-    <script src="./Assets/js/results.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./Assets/js/results.js"></script>
 </body>
 </html>

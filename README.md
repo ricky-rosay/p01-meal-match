@@ -37,10 +37,10 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Credits
 
-Liane Ricciardo
-Imran Rasi
-Kevyn Dobson
-Luis Romero
+- Liane Ricciardo
+- Imran Rasi
+- Kevyn Dobson
+- Luis Romero
 
 ## License
 

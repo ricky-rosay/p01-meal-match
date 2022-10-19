@@ -31,6 +31,8 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Usage
 
+The link of the webpage is: https://ricky-rosay.github.io/p01-meal-match/ 
+
 ![alt text](Assets/images/landingpage.png)
 ![alt text](Assets/images/modalpreview.png)
 ![alt text](Assets/images/thematch.jpg)

@@ -126,7 +126,8 @@ console.log(" >>>>>>  setDrinkCriteria  >>>>>>>>>>>>>>>");
 
 function initDocument() {
 console.log(" >>>>>>  initDocument  >>>>>>>>>>>>>>>");
-    let matchedLS = JSON.parse(localStorage.getItem("MatchedPair")) || [];
+    let matchedLS = JSON.parse(localStorage.getItem("matchedPair")) || [];
+    console.log("matchedLS", matchedLS);
     // let matchedPair = {    
     //     recipeID : 715573,
     //     drinkID : 11050

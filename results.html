@@ -1,92 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"> -->
-    <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="./Assets/css/results.css">
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./Assets/css/results.css" />
     <title>Meal Match Results</title>
-</head>
-<body>
-<!--<<<<<<<<<<<<<<< main body of results page Begin >>>>>>>>>>>-->
+  </head>
+  <body>
+    <!--<<<<<<<<<<<<<<< main body of results page Begin >>>>>>>>>>>-->
     <main>
-        <!--<<<<<<<<<<<<<<< cards             Begin >>>>>>>>>>>-->
-        <section id="card-section" class="section">
-            <div id="card-container" class="container">
-                <h3 id="card-container-hdg" class="title has-text-centered is-size-3">Your Meal is Matched</h3>
-                <a href="./index.html"><button>Make another match!</button></a>
-                <div class="columns mt-5 is-10">
-                    <div class="column is-6">
-                        <div id="recipe-card" class="card">
-                            <header class="card-header">
-                                <p id="recipeName" class="card-header-title">
-                                  Recipe Name
-                                </p>
-                            </header>
-                            <div id="recipe-img" class="card-image has-text-centered px-1">
-                                <img id="recipeImage" src="./Assets/images/dinner.jpg" alt="just a test imgage">
-                            </div>
-                            
-                            <div class="card-content">
-                                <div id="recipeContent" class="content">
-                                    <p class="title is-5">Ingredients</p>
-                                    <ul id="recipeIngredients"></ul>
-                                    <p class="title is-5">Instructions</p>
-                                    <p id="recipeInstructions"></p>
-                                </div>
-                            </div>
-                            <footer class="card-footer">
-                                <a href="#" class="card-footer-item">Save</a>
-                                <!--adding a button to go back to main page-->
-                            </footer>
-                        </div>
-                    </div>
-
-                    <!-- <div class="is-divider-vertical" data-content="MMMMMatch"></div> -->
-                 
-                    <div class="column is-6">    
-                        <div id="drink-card" class="card">
-                            <header class="card-header">
-                                <p id="drinkName" class="card-header-title">
-                                  Drink Name
-                                </p>
-                            </header>
-                            <div id="drink-img" class="card-image has-text-centered px-1">
-                                <img id="drinkImage" src="./Assets/images/dinner.jpg" alt="just a test image">
-
-                            </div>
-
-                            <div class="card-content">
-                                <div id="drinkContent" class="content">
-                                    <p class="title is-5">Mixing Ingredients</p>
-                                    <ul id="drinkIngredients"></ul>
-                                    <p class="title is-5">Mixing Instructions</p>
-                                    <p id="drinkInstructions"></p>
-                                </div>
-                            </div>
-                            <footer class="card-footer">
-                                <a href="#" class="card-footer-item">Save</a>
-                            </footer>
-                        </div>
-                    </div>
-
-                    
+      <!--<<<<<<<<<<<<<<< cards             Begin >>>>>>>>>>>-->
+      <section id="card-section" class="section">
+        <div id="card-container" class="container">
+          <h3 id="card-container-hdg" class="title has-text-centered is-size-3">
+            Your Meal is Matched
+          </h3>
+          <a href="./index.html"><button>Make another match!</button></a>
+          <div class="columns mt-5 is-10">
+            <!--<<<<<<<<<<<<<<< card 2 of results page Begin >>>>>>>>>>>-->
+            <div class="column is-6">
+              <div id="recipe-card" class="card">
+                <header class="card-header">
+                  <p id="recipeName" class="card-header-title">Recipe Name</p>
+                </header>
+                <div id="recipe-img" class="card-image has-text-centered px-1">
+                  <img
+                    id="recipeImage"
+                    src="./Assets/images/dinner.jpg"
+                    alt="just a test imgage"
+                  />
                 </div>
+
+                <div class="card-content">
+                  <div id="recipeContent" class="content">
+                    <p class="title is-5">Ingredients</p>
+                    <ul id="recipeIngredients"></ul>
+                    <p class="title is-5">Instructions</p>
+                    <p id="recipeInstructions"></p>
+                  </div>
+                </div>
+                <!-- <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Save</a>
+                            </footer> -->
+              </div>
             </div>
-        </section>
+            <!--<<<<<<<<<<<<<<< card 1 of results page End >>>>>>>>>>>-->
+            <!-- <div class="is-divider-vertical" data-content="MMMMMatch"></div> -->
+            <!--<<<<<<<<<<<<<<< card 2 of results page Begin >>>>>>>>>-->
+            <div class="column is-6">
+              <div id="drink-card" class="card">
+                <header class="card-header">
+                  <p id="drinkName" class="card-header-title">Drink Name</p>
+                </header>
+                <div id="drink-img" class="card-image has-text-centered px-1">
+                  <img
+                    id="drinkImage"
+                    src="./Assets/images/dinner.jpg"
+                    alt="just a test image"
+                  />
+                </div>
 
+                <div class="card-content">
+                  <div id="drinkContent" class="content">
+                    <p class="title is-5">Mixing Ingredients</p>
+                    <ul id="drinkIngredients"></ul>
+                    <p class="title is-5">Mixing Instructions</p>
+                    <p id="drinkInstructions"></p>
+                  </div>
+                </div>
+                <!-- <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Save</a>
+                            </footer> -->
+              </div>
+            </div>
+            <!--<<<<<<<<<<<<<<< card 2 of results page End >>>>>>>>>>>-->
+          </div>
+        </div>
+      </section>
     </main>
-  <!--<<<<<<<<<<<<<<< main body of results page Begin >>>>>>>>>>>-->
+    <!--<<<<<<<<<<<<<<< main body of results page End >>>>>>>>>>>-->
 
-
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./Assets/js/results.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./Assets/js/results.js"></script>
+  </body>
 </html>

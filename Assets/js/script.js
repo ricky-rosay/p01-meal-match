@@ -3071,7 +3071,8 @@ let random = {
     drink : false
 };
 
-displayRecipeList(recipeList);
+// displayRecipeList(recipeList);
+// displayRecipeList(recipe);
 
 async function getRecipeAPIdata(recipeUrl) {
     // console.log(" >>>>>>  inside getRecipeAPIdata  >>>>>>>>>>>>>>>");
@@ -3097,26 +3098,18 @@ async function getDrinkAPIdata(drinkUrl) {
     displayDrinkList(jsonDrink);
 };
 
+async function getDrinkID(drinkUrl) {
+    // console.log(" >>>>>>  inside getDrinkAPIdata  >>>>>>>>>>>>>>>");
+    const response = await fetch(drinkUrl);
+    const jsonDrink = await response.json();
+    
+    displayDrinkModal(jsonDrink);
+};
+
 function displayRecipeList(recipeData) {
     console.log(" >>> inside displayRecipeList >>>>>>>>>>>>");
 
-    // console.log("recipeData", recipeData);
-    // console.log("recipeData.results", recipeData.results);
-    // console.log("recipeData.results", recipeData.results.length);
-    // let resultsArray = recipeData.results
-    // console.log("recipeData.results", recipeData.results[0].title);
-
-    // console.log("recipeData.results", recipeData.number);
-    // console.log("recipeData.results", recipeData.offset);
-    
-    $("#recipeName").text(recipeData.title);
-//     <li>
-//     <button id="DrinkChoice1" data-index="1" class="button is-focused">Drink Choice 1</button>
-//     <!-- <label class="checkbox">
-//         <input type="checkbox"> Example1
-//     </label> -->
-// </li>
-// Clear historyList element(s)
+// Clear recipeList element(s)
     $("#recipeList").empty();
 
     // Render a new li for each recipe item
@@ -3126,34 +3119,37 @@ function displayRecipeList(recipeData) {
         let recipeTitle = recipeData.results[i].title;
         let recipeID = recipeData.results[i].id;
         // console.log(i, "=>", recipeTitle, "< btn#=>", btnNbr);
-        let liEl = `<li><button id="drinkChoice${btnNbr}" data-id="${recipeID}" class="button">${recipeTitle}</button></li>`;
+        let liEl = `<li><button id="recipeChoice${btnNbr}" data-id="${recipeID}" class="button">${recipeTitle}</button></li>`;
         // append to list element
         $("#recipeList").append(liEl); 
     };
 };
 
-// //get recipe list that matches with the Name
-// function getRecipeID(recipeID) {
-//     let searchInputTxt = document.getElementById
-//     ('search-input').value.trim();
-//     fetch('spoonApiUrl')
-//     .then(response => response.json())
-//     .then(data => {
-//         let html = "";
-//         if(data.recipecontent){
-//             data.recipecontent.forEach(recipe => {
-//                 html
-//             })
-//         }
-//         recipeList.innerHTML = html;
-//     })
-// };
+function displayDrinkList(drinkData) {
+    console.log(" >>> inside displayDrinkList >>>>>>>>>>>>");
+
+    // console.log("drinkData", drinkData);
+    // console.log("drinkData", drinkData.drinks);
+
+// Clear drinkList element(s)
+    $("#drinkList").empty();
+
+    // Render a new li for each recipe item
+    for (let i = 0; i < drinkData.drinks.length; i++) {
+        let btnNbr = i + 1;
+        // create li as a button
+        let drinkTitle = drinkData.drinks[i].strDrink;
+        let drinkID = drinkData.drinks[i].idDrink;
+
+        let liEl = `<li><button id="drinkChoice${btnNbr}" data-id="${drinkID}" class="button">${drinkTitle}</button></li>`;
+        // append to list element
+        $("#drinkList").append(liEl); 
+    };
+};
 
 //get recipe list that matches with the Name
 function displayRecipeModal(recipeData) {
 console.log(" >>> inside displayRecipeModal >>>>>>>>>>>>");
-
-
 console.log("recipeData", recipeData);
 
 $("#recipeModal").addClass("is-active");
@@ -3175,50 +3171,80 @@ for (let i = 0; i < recipeData.extendedIngredients.length; i++) {
 $("#recipeInstructions").text(recipeData.instructions); 
 };
 
+//get recipe list that matches with the Name
+function displayDrinkModal(drinkData) {
+console.log(" >>> inside displayRecipeModal >>>>>>>>>>>>");
+    $("#drinkModal").addClass("is-active");
+
+    let drinkName = drinkData.drinks[0].strDrink;
+    $("#drinkName").text(drinkName)
+
+    let imageAttr = {
+        src: drinkData.drinks[0].strImageSource,
+        alt: "An image of the %drinkName% beverage".replace("%drinkName%", drinkName)
+    };
+
+    if (drinkData.drinks[0].strImageSource === null) {
+        imageAttr.src = drinkData.drinks[0].strDrinkThumb;
+    };
+
+    $("#drinkImage").attr(imageAttr);
+
+    for (let i = 1; i < 16; i++) {
+        if (drinkData.drinks[0][`strIngredient${i}`] !== null) {
+            let ingredient = drinkData.drinks[0][`strIngredient${i}`];
+            let measure = drinkData.drinks[0][`strMeasure${i}`];
+            let line = measure + " " + ingredient;
+            let liEl = "<li>" + line + "</li>";
+            $("#drinkIngredients").append(liEl);
+        };
+    };
+
+    $("#drinkInstructions").text(drinkData.drinks[0].strInstructions);
+};
+
 function setRecipeCriteriaFromSearch() {
 // console.log(" >>>>>>  inside setRecipeCriteriaFromSearch  >>>>>>>>>>>>>");
     let recipeQuery = $("#recipeQuery").val();
     const spoonApiKey="97810753c767475a85ce44389acb3b8e";
     const imranApiKey="561cea46f3664faa9a4dd071c85d058f";
-     const spoonApiUrl = "https://api.spoonacular.com/recipes/complexSearch?query=%RECIPEQUERY%&number=25&apiKey=%APIKEY%";
-    // var recipeUrl = spoonApiUrl.replace("%recipeID%", recipeID).replace("%APIKEY%", spoonApiKey);
-    var recipeUrl = spoonApiUrl.replace("%RECIPEQUERY%", recipeQuery).replace("%APIKEY%", imranApiKey);
+    const spoonApiUrl = "https://api.spoonacular.com/recipes/complexSearch?query=%RECIPEQUERY%&number=25&apiKey=%APIKEY%";
+    var recipeUrl = spoonApiUrl.replace("%RECIPEQUERY%", recipeQuery).replace("%APIKEY%", spoonApiKey);
+    // var recipeUrl = spoonApiUrl.replace("%RECIPEQUERY%", recipeQuery).replace("%APIKEY%", imranApiKey);
     console.log(recipeUrl);
-    // getRecipeAPIdata(recipeUrl)
+    getRecipeAPIdata(recipeUrl)
     // .then(response => {
     //     console.log('yay from setRecipeCriteriaFromSearch');
     // })
-    // .catch(error => {
-    //     console.log('error!');
-    //     console.error(error)
-    // });
+    .catch(error => {
+        console.log('error!');
+        console.error(error)
+    });
 };
 
 function setDrinkCriteriaFromSearch() {
 // console.log(" >>>>>>  inside setDrinkCriteriaFromSearch  >>>>>>>>>>>>>");
-    random.drink = false;
     let drinkQuery = $("#drinkQuery").val();
-    const cocktailUrl = "www.thecocktaildb.com/api/json/v1/1/search.php?s=%drinkQuery%";
-    var drinkUrl = cocktailUrl.replace("%drinkQuery%", drinkQuery);
+    const cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=%DRINKQUERY%";
+    var drinkUrl = cocktailUrl.replace("%DRINKQUERY%", drinkQuery);
     console.log(drinkUrl);
     getDrinkAPIdata(drinkUrl)
-    .then(response => {
-    console.log('yay from setDrinkCriteriaFromSearch');
-    })
+    // .then(response => {
+    //     console.log('yay from setDrinkCriteriaFromSearch');
+    // })
     .catch(error => {
-    console.log('error!');
-    console.error(error)
+        console.log('error!');
+        console.error(error)
     });
 };
 
 function setRandomDrinkCriteria() {
 // console.log(" >>>>>>  inside setRecipeCriteriaFromSearch  >>>>>>>>>>>>>");
-    random.drink = true;
-    const drinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+     const drinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
     getDrinkAPIdata(drinkUrl)
-    then(response => {
-        console.log('yay from setRandomDrinkCriteria');
-    })
+    // then(response => {
+    //     console.log('yay from setRandomDrinkCriteria');
+    // })
     .catch(error => {
         console.log('error!');
         console.error(error)
@@ -3248,8 +3274,6 @@ $("#searchDrinkBtn").on("click", function (event) {
     // console.log ("event=>", event);
     // console.log ("event target localName=>", event.target.localName);
     // console.log ("event target id=>", event.target.id);
-
-
     matched.drink = false;
     random.drink = false;
     setDrinkCriteriaFromSearch();
@@ -3261,8 +3285,6 @@ $("#randomDrinkBtn").on("click", function (event) {
     // console.log ("event=>", event);
     // console.log ("event target localName=>", event.target.localName);
     // console.log ("event target id=>", event.target.id);
-
-
     matched.drink = false;
     random.drink = true;
     setRandomDrinkCriteria();
@@ -3271,9 +3293,9 @@ $("#randomDrinkBtn").on("click", function (event) {
 $("#recipeList").on("click", function (event) {
     // console.log(" >>>>>>>>>click event happened >>>>>>>>>>>>>");
     event.preventDefault();
-    console.log ("event=>", event);
-    console.log ("event target localName=>", event.target.localName);
-    console.log ("event target id=>", event.target.id);
+    // console.log ("event=>", event);
+    // console.log ("event target localName=>", event.target.localName);
+    // console.log ("event target id=>", event.target.id);
     
     let recipeID = $("#" + event.target.id).data("id");
     console.log("button data-id", recipeID );
@@ -3293,13 +3315,56 @@ $("#recipeList").on("click", function (event) {
 // displayRecipeModal(recipeID)
 });
 
+$("#drinkList").on("click", function (event) {
+    // console.log(" >>>>>>>>>click event happened >>>>>>>>>>>>>");
+    event.preventDefault();
+    // console.log ("event=>", event);
+    // console.log ("event target localName=>", event.target.localName);
+    // console.log ("event target id=>", event.target.id);
+    
+    let drinkID = $("#" + event.target.id).data("id");
+    console.log("button data-id", drinkID );
+    const cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=%DRINKID%";
+    var drinkUrl = cocktailUrl.replace("%DRINKID%", drinkID);
+       console.log(drinkUrl);
+    getDrinkID(drinkUrl)
+        .catch(error => {
+            console.log('error in getDrinkID!');
+            console.error(error)
+    });
+});
+
 $("#recipeModalBkg").on("click", function (event) {
     // console.log(" >>>>>>>>>click event happened >>>>>>>>>>>>>");
     event.preventDefault();
-    console.log ("event=>", event);
-    console.log ("event target localName=>", event.target.localName);
-    console.log ("event target id=>", event.target.id);
+    // console.log ("event=>", event);
+    // console.log ("event target localName=>", event.target.localName);
+    // console.log ("event target id=>", event.target.id);
     $("#recipeModal").removeClass("is-active");
 // displayRecipeModal(recipeID)
+});
+
+$("#drinkModalBkg").on("click", function (event) {
+    // console.log(" >>>>>>>>>click event happened >>>>>>>>>>>>>");
+    event.preventDefault();
+    // console.log ("event=>", event);
+    // console.log ("event target localName=>", event.target.localName);
+    // console.log ("event target id=>", event.target.id);
+    $("#drinkModal").removeClass("is-active");
+// displayRecipeModal(recipeID)
+});
+
+$("#selectRecipe").on("click", function (event) {
+    // console.log(" >>>>>>>>>click event happened >>>>>>>>>>>>>");
+    event.preventDefault();
+    // console.log ("event=>", event);
+    // console.log ("event target localName=>", event.target.localName);
+    // console.log ("event target id=>", event.target.id);
+    matched.recipe = true;
+    $("#drinkModal").removeClass("is-active");
+// displayRecipeModal(recipeID)
+    if (matched) {
+        // goto results page
+    };
 });
 

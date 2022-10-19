@@ -2936,10 +2936,10 @@ const imranApiKey="561cea46f3664faa9a4dd071c85d058f";
 let testRecipeCardUrl="https://api.spoonacular.com/recipes/715573/card?apiKey=561cea46f3664faa9a4dd071c85d058f"
 let testRecipeCard="https://spoonacular.com/recipeCardImages/recipeCard-1666123199329.png";
 let spoonApiUrl = "https://api.spoonacular.com/recipes/715573/information?includeNutrition=true&apiKey=561cea46f3664faa9a4dd071c85d058f";
-
+// const drinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 // test variables
-let recipeImg = document.getElementById('recipeImage');
-let drinkId=715573;
+// let recipeImg = document.getElementById('recipeImage');
+// let drinkId=715573;
 
 
 async function getRecipeAPIdata(recipeUrl) {
@@ -2979,18 +2979,14 @@ function displayRecipeData(recipeData) {
 
         let liEl = "<li>" + ingredient + "</li>";
         $("#recipeIngredients").append(liEl);
-
-    }
-
-
+    };
     $("#recipeInstructions").text(recipeData.instructions); 
 };
 
 // The following function renders items in a list as <li> elements
 function displayDrinkData(drinkData) {
     console.log(" >>> inside displayDrinkData >>>>>>>>>>>>");
-    // console.log("drinkData");
-    // console.log(drinkData.drinks[0]);
+
     let drinkName = drinkData.drinks[0].strDrink;
     $("#drinkName").text(drinkName)
     
@@ -3003,7 +2999,6 @@ function displayDrinkData(drinkData) {
         imageAttr.src = drinkData.drinks[0].strDrinkThumb;
     };
 
-    // console.log(imageAttr);
     $("#drinkImage").attr(imageAttr);
 
     for (let i = 1; i < 16; i++) {
@@ -3018,106 +3013,60 @@ function displayDrinkData(drinkData) {
 
     $("#drinkInstructions").text(drinkData.drinks[0].strInstructions);
 };
-// The following function renders items in a list as <li> elements
-function displayRecipeSearchError() {
-    console.log(" >>> inside displayRecipeSearchError >>>>>>>>>>>>");
-    // Clear historyList element(s) 
-    // $("#recipeList").empty();
-    // console.log("recipe list items cleared from screen");
-    // $("#recipeList").text("Could not complete search. Try another name.");
-};
 
-// The following function renders items in a list as <li> elements
-function renderRecipeList(data) {
-    console.log(" >>> inside renderRecipeList >>>>>>>>>>>>");
-    // Clear historyList element(s) 
-    $("#recipeList").empty();
-    console.log("recipe list items cleared from screen");
-  
-    // Render a new li for each history item
-    data.forEach(function(item,index){ 
-
-        let btnNbr = index + 1;
-        // create li as a button
-        let liEl = $("<li><button id=\"btn" + btnNbr + "\" type=\"button\" class=\"btn btn-secondary btn-lg btn-block\"></button></li>");
-        // append to list element  
-        $("#recipeList").append(liEl);
-        // add data atribute and text
-        let btnId = "#btn" + btnNbr;
-        $(btnId).attr("data-index", index).attr("data-recipeID", item.id);
-        $(btnId).text(item.title);
-        console.log("add ", btnId, " => ", item.location);
-      
-    });
-};
-
-function setRecipeCriteria() {
+function setRecipeCriteria(recipeID) {
     console.log(" >>>>>>  setRecipeCriteria  >>>>>>>>>>>>>>>");
-
-    // var foodInput = $("#foodInput").val();
-    // teesting purposes
-    // var foodInput = "lasagna";
-    // const spoonApiUrl = "https://api.spoonacular.com/recipes/complexSearch?titleMatch=%recipeCriteria%&number=50&apiKey=%APIKEY%";
-    
     // get recipe ID from localStorage
-    var recipeId=715573;
+    // var recipeId=715573;
     // const spoonApiUrl = "https://api.spoonacular.com/recipes/%recipeId%/information?includeNutrition=true&apiKey=%APIKEY%";
-    const spoonApiUrl = "https://api.spoonacular.com/recipes/%recipeId%/card?apiKey=%APIKEY%";
-    var recipeUrl = spoonApiUrl.replace("%recipeId%", recipeId).replace("%APIKEY%", spoonApiKey);
+    const spoonApiUrl = "https://api.spoonacular.com/recipes/%recipeID%/card?apiKey=%APIKEY%";
+    // var recipeUrl = spoonApiUrl.replace("%recipeID%", recipeID).replace("%APIKEY%", spoonApiKey);
+    var recipeUrl = spoonApiUrl.replace("%recipeID%", recipeID).replace("%APIKEY%", imranApiKey);
     console.log(recipeUrl);
     getRecipeAPIdata(recipeUrl)
-    .then(response => {
-        // recipeData = response;
-        // console.log("recipeData====>");
-        // console.log(recipeData);
-        
-        // renderRecipeList(response);
-        console.log('yay from getRecipeAPIdata');
-    })
+    // .then(response => {
+    //     console.log('yay from getRecipeAPIdata');
+    // })
     .catch(error => {
-        displayRecipeSearchError();
         console.log('error!');
         console.error(error)
     });
 };
 
 
-function setDrinkCriteria() {
+function setDrinkCriteria(drinkID) {
 console.log(" >>>>>>  setDrinkCriteria  >>>>>>>>>>>>>>>");
 
-let drinkId=17175;
-const cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=%drinkId%";
-var drinkUrl = cocktailUrl.replace("%drinkId%", drinkId);
+    // let drinkID=17175;
+    const cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=%drinkID%";
+    var drinkUrl = cocktailUrl.replace("%drinkID%", drinkID);
 
-// const drinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-getDrinkAPIdata(drinkUrl)
-.then(response => {
-    // gatherDrink(drinkData);
-    // displayDrinkforSelection();
-    console.log('yay from setDrinkCriteria');
-})
-.catch(error => {
-    console.log('error!');
-    console.error(error)
-});
+
+    getDrinkAPIdata(drinkUrl)
+    // .then(response => {
+    //     console.log('yay from setDrinkCriteria');
+    // })
+    .catch(error => {
+        console.log('error!');
+        console.error(error)
+    });
     
 };
 
 function initDocument() {
 console.log(" >>>>>>  initDocument  >>>>>>>>>>>>>>>");
+    // let matchedLS = JSON.parse(localStorage.getItem("MatchedPair")) || [];
+    let matchedPair = {    
+        recipeID : 715573,
+        drinkID : 11050
+        };
+    // matchedPair = matchedLS;
 
-// grab local storage matchedPair
-// call food api with id
-// call drink api with id
-//display food
-//display drink
-
-// maybe hide the lists and selection box at bottom until needed
-// setRecipeCriteria();
-// setDrinkCriteria();
-displayRecipeData(recipes);
-displayDrinkData(cocktails);
-    
+    // maybe hide the lists and selection box at bottom until needed
+    setRecipeCriteria(matchedPair.recipeID);
+    displayRecipeData(recipes);
+    setDrinkCriteria(matchedPair.drinkID);
+    displayDrinkData(cocktails);
 };
 
 
@@ -3129,13 +3078,13 @@ console.log("document ready  >>>>>>>>>>>>>>>>>>>>>>");
 });
     
     // wait for user Input
-$("#saveBtn").on("click", function (event) {
-console.log(" >>>>>>>>>click event happened >>>>>>>>>>>>>");
-event.preventDefault();
-console.log ("event=>", event);
+// $("#saveBtn").on("click", function (event) {
+// console.log(" >>>>>>>>>click event happened >>>>>>>>>>>>>");
+// event.preventDefault();
+// console.log ("event=>", event);
 
 // add to food/drink history in local storage
     // isRandom = true;
     // setRandomDrinkCriteria();  
 
-});
+// });

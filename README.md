@@ -23,28 +23,18 @@ As a user i would like to have the best selection of meal with cocktail. So i ca
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
 - What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+  Various motivation factors are responsible for choices of foods and beverages in different eating occasions at various times of the day. The study of food and people’s perception of flavors has proven to be very marketable throughout the casual dining sector.
+- Why did you build this project?
+  The recipe is essential. Skill… I don’t think skill is as important as the recipe because the more you do it, the better you get. But what I think really is important – is the way you do it.
 - What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+  Standardized recipes help ensure that the best possible food items are produced every time. ingredients and quantities are used each time the recipe is prepared, the cost per serving remains the same. of ingredients needed for production can be easily calculated based on the information provided on the recipe.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+![alt text](assets/images/screenshot.png)
+![alt text](assets/images/screenshot.png)
+![alt text](assets/images/screenshot.png)
+![alt text](assets/images/screenshot.png)
 
 ![alt text](assets/images/screenshot.png)
 

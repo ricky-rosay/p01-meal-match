@@ -18,10 +18,10 @@ const imranApiKey="561cea46f3664faa9a4dd071c85d058f";
 const rickyApiKey="ceb76db1877f401aa6963a7bd800b499";
 // displayRecipeList(recipeList);
 // displayRecipeList(recipe);
-
+var options = {credentials: "same-origin"}
 async function getRecipeAPIdata(recipeUrl) {
     // console.log(" >>>>>>  inside getRecipeAPIdata  >>>>>>>>>>>>>>>");
-    const response = await fetch(recipeUrl);
+    const response = await fetch(recipeUrl,options);
     const jsonRecipe = await response.json();
     
     displayRecipeList(jsonRecipe); 
@@ -29,7 +29,7 @@ async function getRecipeAPIdata(recipeUrl) {
 
 async function getRecipeID(recipeUrl) {
     // console.log(" >>>>>>  inside getRecipeAPIdata  >>>>>>>>>>>>>>>");
-    const response = await fetch(recipeUrl);
+    const response = await fetch(recipeUrl,options);
     const jsonRecipe = await response.json();
     
     displayRecipeModal(jsonRecipe); 
@@ -37,7 +37,7 @@ async function getRecipeID(recipeUrl) {
 
 async function getDrinkAPIdata(drinkUrl) {
     // console.log(" >>>>>>  inside getDrinkAPIdata  >>>>>>>>>>>>>>>");
-    const response = await fetch(drinkUrl);
+    const response = await fetch(drinkUrl,options);
     const jsonDrink = await response.json();
     
     displayDrinkList(jsonDrink);
@@ -45,7 +45,7 @@ async function getDrinkAPIdata(drinkUrl) {
 
 async function getDrinkID(drinkUrl) {
     // console.log(" >>>>>>  inside getDrinkAPIdata  >>>>>>>>>>>>>>>");
-    const response = await fetch(drinkUrl);
+    const response = await fetch(drinkUrl,options);
     const jsonDrink = await response.json();
     
     displayDrinkModal(jsonDrink);
@@ -305,7 +305,7 @@ $("#drinkModalBkg").on("click", function (event) {
 
 $("#matchBtn").on("click", function (event) {
     // console.log(" >>>>>>>>>click event happened >>>>>>>>>>>>>");
-    event.preventDefault();
+    // event.preventDefault();
     // console.log ("event=>", event);
     // console.log ("event target localName=>", event.target.localName);
     // console.log ("event target id=>", event.target.id);
@@ -314,4 +314,5 @@ $("#matchBtn").on("click", function (event) {
     if (matched) {
         localStorage.setItem("matchedPair", JSON.stringify(matchedLS));
     };
+    document.location.href = './results.html'
 });

@@ -247,13 +247,13 @@ $("#recipeList").on("click", function (event) {
     $("#" + event.target.id).addClass("is-danger");
     matched.recipe = true;
     matchedLS.recipeID = $("#" + event.target.id).data("id");
-    console.log("button data-id", recipeID );
+    // console.log("button data-id", matchedLS.recipeID );
 
     const spoonApiUrl = "https://api.spoonacular.com/recipes/%RECIPEID%/information?includeNutrition=false&apiKey=%APIKEY%";
     //    var recipeUrl = spoonApiUrl.replace("%RECIPEID%", recipeID).replace("%APIKEY%", spoonApiKey);
     //    var recipeUrl = spoonApiUrl.replace("%RECIPEID%", recipeID).replace("%APIKEY%", imranApiKey);
        var recipeUrl = spoonApiUrl.replace("%RECIPEID%", matchedLS.recipeID).replace("%APIKEY%", rickyApiKey);
-       console.log(recipeUrl);
+    //    console.log(recipeUrl);
     getRecipeID(recipeUrl)
         .catch(error => {
             console.log('error in getRecipeID!');
@@ -272,10 +272,10 @@ $("#drinkList").on("click", function (event) {
     $("#" + event.target.id).addClass("is-danger");
     matched.drink = true;
     matchedLS.drinkID = $("#" + event.target.id).data("id");
-    console.log("button data-id", drinkID );
+    // console.log("button data-id", matchedLS.drinkID );
     const cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=%DRINKID%";
     var drinkUrl = cocktailUrl.replace("%DRINKID%", matchedLS.drinkID);
-       console.log(drinkUrl);
+    //    console.log(drinkUrl);
     getDrinkID(drinkUrl)
         .catch(error => {
             console.log('error in getDrinkID!');

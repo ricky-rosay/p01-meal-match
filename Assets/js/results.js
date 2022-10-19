@@ -3018,10 +3018,10 @@ function setRecipeCriteria(recipeID) {
     console.log(" >>>>>>  setRecipeCriteria  >>>>>>>>>>>>>>>");
     // get recipe ID from localStorage
     // var recipeId=715573;
-    // const spoonApiUrl = "https://api.spoonacular.com/recipes/%recipeId%/information?includeNutrition=true&apiKey=%APIKEY%";
-    const spoonApiUrl = "https://api.spoonacular.com/recipes/%recipeID%/card?apiKey=%APIKEY%";
-    // var recipeUrl = spoonApiUrl.replace("%recipeID%", recipeID).replace("%APIKEY%", spoonApiKey);
-    var recipeUrl = spoonApiUrl.replace("%recipeID%", recipeID).replace("%APIKEY%", imranApiKey);
+    const spoonApiUrl = "https://api.spoonacular.com/recipes/%RECIPEID%/information?includeNutrition=false&apiKey=%APIKEY%";
+    // const spoonApiUrl = "https://api.spoonacular.com/recipes/%recipeID%/card?apiKey=%APIKEY%";
+    var recipeUrl = spoonApiUrl.replace("%RECIPEID%", recipeID).replace("%APIKEY%", spoonApiKey);
+    // var recipeUrl = spoonApiUrl.replace("%RECIPEID%", recipeID).replace("%APIKEY%", imranApiKey);
     console.log(recipeUrl);
     getRecipeAPIdata(recipeUrl)
     // .then(response => {
@@ -3064,9 +3064,9 @@ console.log(" >>>>>>  initDocument  >>>>>>>>>>>>>>>");
 
     // maybe hide the lists and selection box at bottom until needed
     setRecipeCriteria(matchedPair.recipeID);
-    displayRecipeData(recipes);
+    // displayRecipeData(recipes);
     setDrinkCriteria(matchedPair.drinkID);
-    displayDrinkData(cocktails);
+    // displayDrinkData(cocktails);
 };
 
 

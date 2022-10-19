@@ -34,12 +34,12 @@
                             <img src="./Assets/images/meal.png" alt="just a test imgage">
                         </div>
                         <header class="card-header">
-                            <input type="text" id="search-input" placeholder="Food?">
-                            <button class="button is-focused" id="search-btn">Submit</button>
+                            <input id="recipeQuery" type="text"placeholder="Food?">
+                            <button id="searchRecipeBtn" class="button is-focused" >Submit</button>
                         </header>
                         <div class="card-content">
                             <div id="recipecontent" class="content">
-                                once you pull the list you can delete the li and input the data
+                                Choose a recipe
                                 <ul id="recipeList">
                                     <li>
                                         <label class="checkbox">
@@ -72,27 +72,28 @@
                     </div>
                 </div>
 
-                <div class="is-divider-vertical" data-content="MMMMMatch"></div>
+                <!-- <div class="is-divider-vertical" data-content="MMMMMatch"></div> -->
              
                 <div class="column">    
                     <div id="drink-card" class="card">
-                        <div id="drnk-img" class="card-image has-text-centered px-1">
-                            <img src="./Assets/images/cocktail.jpg" alt="just a test imgage">
+                        <div id="drink-img" class="card-image has-text-centered px-1">
+                            <img src="./Assets/images/cocktail.jpg" alt="just a test image">
 
                         </div>
                         <header class="card-header">
-                            <input type="text" placeholder="Cocktail?">
-                            <button class="button is-focused">Submit</button>
-                            <button class="button is-warning is-light">Random!</button>
+                            <input id="drinkQuery" type="text" placeholder="Cocktail?">
+                            <button id="searchDrinkBtn" class="button is-focused">Submit</button>
+                            <button id="randomDrinkBtn" class="button is-warning is-light mx-1">Random!</button>
                         </header>
                         <div class="card-content">
                             <div id="drink-content" class="content">
                                 <!--once you pull the list you can delete the li and input the data-->
                                 <ul class="control" id="drinkList">
                                     <li>
-                                        <label class="checkbox">
+                                        <button id="DrinkChoice1" data-index="1" class="button is-focused">Drink Choice 1</button>
+                                        <!-- <label class="checkbox">
                                             <input type="checkbox"> Example1
-                                        </label>
+                                        </label> -->
                                     </li>
                                     <li>
                                         <label class="checkbox">
@@ -124,6 +125,52 @@
             </div>
         </div>
     </section>
+    <!-->>>>>>>>>>>>>>>>>>>>> modal <<<<<<<<<<<<<<<<<<<<<<<-->
+    <div  id="recipeModal" class="modal">
+        <div id="recipeModalBkg" class="modal-background"></div>
+        <div class="modal-content has-background-white py-1 px-1">
+            <!-- >>>>>>>>>>>>>>>>>>>> card begin <<<<<<<<<<<<<<<<<<<<<<-->
+            <section id="card-section" class="section">
+                <div id="card-container" class="container">
+                  <h3 id="card-container-hdg" class="title has-text-centered is-size-3">
+                    Your Meal is Matched
+                  </h3>
+                  <a href="./index.html"><button>Make another match!</button></a>
+                  <div class="columns mt-5 is-10">
+                    <!--<<<<<<<<<<<<<<< card 2 of results page Begin >>>>>>>>>>>-->
+                    <div class="column is-6">
+                      <div id="recipe-card" class="card">
+                        <header class="card-header">
+                          <p id="recipeName" class="card-header-title">Recipe Name</p>
+                        </header>
+                        <div id="recipe-img" class="card-image has-text-centered px-1">
+                          <img
+                            id="recipeImage"
+                            src="./Assets/images/dinner.jpg"
+                            alt="just a test imgage"
+                          />
+                        </div>
+        
+                        <div class="card-content">
+                          <div id="recipeContent" class="content">
+                            <p class="title is-5">Ingredients</p>
+                            <ul id="recipeIngredients"></ul>
+                            <p class="title is-5">Instructions</p>
+                            <p id="recipeInstructions"></p>
+                          </div>
+                        </div>
+                        <!-- <footer class="card-footer">
+                                        <a href="#" class="card-footer-item">Save</a>
+                                    </footer> -->
+                      </div>
+                    </div>
+                </div>
+            </section>
+            <!-- >>>>>>>>>>>>>>>>>>>> card  end  <<<<<<<<<<<<<<<<<<<<<<-->
+        </div>
+    </div>
+
+
     <!--commenting this out for now-->
     <!--making this entire section a box
     <section class="hero is-large is-halfheight">

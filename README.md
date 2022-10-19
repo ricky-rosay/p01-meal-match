@@ -31,14 +31,14 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Usage
 
-![alt text](assets/images/landingpage.png)
-![alt text](assets/images/modalpreview.png)
-![alt text](assets/images/thematch.jpg)
+![alt text](Assets/images/landingpage.png)
+![alt text](Assets/images/modalpreview.png)
+![alt text](Assets/images/thematch.jpg)
 
 ## Credits
 
 Liane Ricciardo
-Imran Khan
+Imran Rasi
 Kevyn Dobson
 Luis Romero
 

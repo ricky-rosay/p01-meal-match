@@ -41,34 +41,9 @@
                             <div id="recipecontent" class="content">
                                 Choose a recipe
                                 <ul id="recipeList">
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox"> Example1
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox"> Example2
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox"> Example3
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox"> Example4
-                                        </label>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item"><button class="button is-success is-light">Pick me!</button></a>
-                            <!--adding a button to go back to main page-->
-                            <a href="./index.html" class="card-footer-item"><button class="button is-danger is-light">Not for me!</button></a>
-                        </footer>
                     </div>
                 </div>
 
@@ -89,27 +64,6 @@
                             <div id="drink-content" class="content">
                                 <!--once you pull the list you can delete the li and input the data-->
                                 <ul class="control" id="drinkList">
-                                    <li>
-                                        <button id="DrinkChoice1" data-index="1" class="button is-focused">Drink Choice 1</button>
-                                        <!-- <label class="checkbox">
-                                            <input type="checkbox"> Example1
-                                        </label> -->
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox"> Example2
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox"> Example3
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox"> Example4
-                                        </label>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -125,20 +79,17 @@
             </div>
         </div>
     </section>
-    <!-->>>>>>>>>>>>>>>>>>>>> modal <<<<<<<<<<<<<<<<<<<<<<<-->
+    <!--modal-->
     <div  id="recipeModal" class="modal">
         <div id="recipeModalBkg" class="modal-background"></div>
         <div class="modal-content has-background-white py-1 px-1">
             <!-- >>>>>>>>>>>>>>>>>>>> card begin <<<<<<<<<<<<<<<<<<<<<<-->
             <section id="card-section" class="section">
                 <div id="card-container" class="container">
-                  <h3 id="card-container-hdg" class="title has-text-centered is-size-3">
-                    Your Meal is Matched
-                  </h3>
-                  <a href="./index.html"><button>Make another match!</button></a>
+                  <h3 id="card-container-hdg" class="title has-text-centered is-size-3">Your Meal is Matched</h3>
                   <div class="columns mt-5 is-10">
                     <!--<<<<<<<<<<<<<<< card 2 of results page Begin >>>>>>>>>>>-->
-                    <div class="column is-6">
+                    <div class="column">
                       <div id="recipe-card" class="card">
                         <header class="card-header">
                           <p id="recipeName" class="card-header-title">Recipe Name</p>
@@ -159,6 +110,10 @@
                             <p id="recipeInstructions"></p>
                           </div>
                         </div>
+                        <footer>
+                            <!--add ID in order to allow it to be chosen-->
+                            <a href="#" class="card-footer-item is-success">Pick me</a>
+                        </footer>
                         <!-- <footer class="card-footer">
                                         <a href="#" class="card-footer-item">Save</a>
                                     </footer> -->
@@ -169,30 +124,6 @@
             <!-- >>>>>>>>>>>>>>>>>>>> card  end  <<<<<<<<<<<<<<<<<<<<<<-->
         </div>
     </div>
-
-
-    <!--commenting this out for now-->
-    <!--making this entire section a box
-    <section class="hero is-large is-halfheight">
-        <div class="box" id="recipe">
-            <h1>search food</h1>
-            <button class="button is-info">Button</button>
-            <input type="text" placeholder="Food?">
-            <div>
-                <h2>results will be here</h2>
-            </div>
-        </div>
-    </section>
-    <section class="hero is-large is-halfheight">
-        <div class="box" id="drink">
-            <h1>Search Beverage</h1>
-            <input type="text" placeholder="Cocktail?">
-            <div>
-                <h2>results will be here</h2>
-            </div>
-        </div>
-        </div>
-    </section>-->
     <div class="box">
         <div class="column is-centered">
             <div id="recipe-card" class="card">
